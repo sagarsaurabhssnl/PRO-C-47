@@ -1,11 +1,11 @@
 class Policecar {
     constructor(y) {
-        this.car1 = createSprite(75, y + 1000);
-        this.car2 = createSprite(285, y + 1000);
-        this.car3 = createSprite(500, y + 1000);
-        this.car4 = createSprite(665, y + 1000);
-        this.car5 = createSprite(880, y + 1000);
-        this.car6 = createSprite(1095, y + 1000);
+        this.car1 = createSprite(75, y + 2000);
+        this.car2 = createSprite(285, y + 2000);
+        this.car3 = createSprite(500, y + 2000);
+        this.car4 = createSprite(665, y + 2000);
+        this.car5 = createSprite(880, y + 2000);
+        this.car6 = createSprite(1095, y + 2000);
         this.car1.addImage(policeCarImg);
         this.car2.addImage(policeCarImg);
         this.car3.addImage(policeCarImg);

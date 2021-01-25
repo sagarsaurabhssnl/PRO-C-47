@@ -1,13 +1,11 @@
-function mainMenuSetup(){
-    
+function mainMenuSetup() {
+
 }
 
 function mainMenu() {
-    if (gameState === "menu") {
-        if (changeCamera && gameState === "mainmenu" && camera.position.y >playerCar.car.x) {
-            camera.position.y -= 10;
-        } else {
-            camera.position.y -= 10;
-        }
+    if (changeCamera === true && gameState === "mainmenu" && camera.position.y > playerCar.car.y) {
+        camera.position.y -= 50;
+    } else if(camera.position.y > playerCar.car.y){
+        camera.position.y -= 2;
     }
 }

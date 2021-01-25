@@ -35,23 +35,30 @@ function setup() {
     playerCar = new Player();
     police = new Policecar(playerCar.car.y);
     policeCarDiffrence = police.car1.y - playerCar.car.y;
-    // camera.position.y = playerCar.car.y+1000;
+    camera.position.y = playerCar.car.y + 2000;
+    camera.position.x = police.car3.x + 90;
     setTimeout(() => {
         changeCamera = true;
     }, 1000);
     blast = createSprite(playerCar.car.x, playerCar.car.y);
     blast.addAnimation("blast", blastAnimation);
     blast.pause();
+    setTimeout(() => {
+        blast.play();
+        setTimeout(() => { blast.pause(); blast.visible=false; }, 1180)
+    }, 3000)
     distance = ((playerCar.car.y - 300) * -1);
 }
 
 function draw() {
     background(150);
     distance = ((playerCar.car.y - 300));
-    // console.log(distance);
+    blast.y = playerCar.car.y;
+    blast.x = playerCar.car.x;
     policeCarDiffrence = police.car1.y - playerCar.car.y;
     policeCarDiffrence = Math.round(policeCarDiffrence);
     playState();
+    mainMenu();
     drawSprites();
     push();
     translate(camera.x - 570, camera.y + 200);
@@ -104,7 +111,7 @@ function keyPressed() {
     if (keyCode === 39 && playerxPos < 5 && gameState === "play") {
         playerxPos += 1;
     }
-    if (keyCode === 32 && nitroTriggered === false) {        
+    if (keyCode === 32 && nitroTriggered === false) {
         nitroTriggered = true;
         for (var ni = nitroTime; ni < nitroTime; n++) {
             console.log("triggered");

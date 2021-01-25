@@ -11,7 +11,6 @@ class Player {
         this.car.scale = 0.5;
         this.car.addImage(carImg);
         distCheck = this.car.y * (-1) + 500;
-        this.car.debug = true;
     }
     controls() {
         camera.position.y = this.car.y - 150;
